@@ -31,5 +31,5 @@ del dfs
 
 # Save the resulting DataFrame
 print('Saving resulting DataFrame')
-DATASET_PATH = os.path.join(DATA_FOLDER_PATH, 'COVID19MEXICO.csv')
-df.to_csv(DATASET_PATH, index=False)
+DATASET_PATH = os.path.join(DATA_FOLDER_PATH, 'COVID19MEXICO.parquet')
+df.to_parquet(DATASET_PATH, index=False)

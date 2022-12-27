@@ -1,3 +1,16 @@
+# PROJECT STUFF
+## Data
+data/**/*.csv
+data/**/*.parquet
+data/**/*.zip
+data/**/*.xlsx
+data/**/*.pdf
+
+## Notebooks
+notebooks/**/*.ipynb
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,8 +140,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# PROJECT STUFF
-data/**/*.csv
-data/**/*.zip
-notebooks/*.ipynb
