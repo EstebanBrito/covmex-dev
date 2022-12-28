@@ -8,13 +8,23 @@ Este proyecto fue realizado utilizando Python 3, Git y DVC. Si no los tienes ins
 * [Git](https://www.atlassian.com/git/tutorials/install-git)
 * [DVC](https://dvc.org/)
 
+Además, se usa la librería _graphviz_ para visualizar redes neuronales en Tensorflow. Para instalarla sólo es necesario hacer:
+
+```bash
+sudo apt-get install graphviz
+```
+
+Más información en los siguientes enlaces: [1](https://datascience.stackexchange.com/questions/12851/how-do-you-visualize-neural-network-architectures), [2](https://pyimagesearch.com/2021/05/22/visualizing-network-architectures-using-keras-and-tensorflow/)
+
 ## Clonando el proyecto
+
+Situáte en el directorio en el que desees descargar el proyecto y ejecuta el siguiente comando en la terminal:
 
 ```bash
 git clone https://github.com/EstebanBrito/covid19-mexico
 ```
 
-## Installing Pipenv
+## Instalando Pipenv
 
 Pipenv es utilizado para la instalación de paquetes y el manejo de entornos virtuales. Esto puede realizarse sin la ayuda de Pipenv, pero es MUY recomendado tenerlo. Pipenv es fácilmente instalable con pip:
 
@@ -48,11 +58,13 @@ Agrega la ruta del directorio de scripts de Python al PATH de tu computadora. M�
 Sitúease dentro de la carpeta que se generó al clonar el proyecto. Use Pipenv para la creación de un entorno virtual:
 
 ```bash
-pipenv shell # Crea un entorno virtual de Python
+# Crea un entorno virtual de Python
+pipenv shell 
 ```
 
 Después de creado el entorno, use Pipenv para instalar las librerías:
 
 ```bash
-(covid19-mexico) pipenv install --ignore-pipfile # Instala los paquetes necesarios para el proyecto
+# Instala los paquetes necesarios para el proyecto
+(covid19-mexico) pipenv install --ignore-pipfile 
 ```

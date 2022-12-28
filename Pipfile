@@ -12,6 +12,8 @@ seaborn = "*"
 scikit-learn = "*"
 tensorflow = "*"
 mlflow = "*"
+graphviz = "*"
+pydot = "*"
 
 [dev-packages]
 

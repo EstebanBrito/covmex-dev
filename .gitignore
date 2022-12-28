@@ -9,6 +9,15 @@ data/**/*.pdf
 ## Notebooks
 notebooks/**/*.ipynb
 
+## Models
+models/*
+
+## Results
+results/*
+
+## MLflow Stuff
+mlruns/*
+mlruns/
 
 
 # Byte-compiled / optimized / DLL files
