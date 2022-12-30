@@ -12,8 +12,8 @@ notebooks/**/*.ipynb
 ## Models
 models/*
 
-## Results
-results/*
+## Resulting Artifacts
+artifacts/*
 
 ## MLflow Stuff
 mlruns/*
