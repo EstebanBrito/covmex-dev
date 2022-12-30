@@ -10,10 +10,11 @@ pandas = "*"
 matplotlib = "*"
 seaborn = "*"
 scikit-learn = "*"
-tensorflow = "*"
 mlflow = "*"
 graphviz = "*"
 pydot = "*"
+tensorflow-cpu = "*"
+bentoml = "*"
 
 [dev-packages]
 
