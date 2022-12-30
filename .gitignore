@@ -1,25 +1,47 @@
 # PROJECT STUFF
-## Data
+
+## Global
+### MLflow Stuff
+mlruns/*
+mlruns/
+
+### Data
 data/**/*.csv
 data/**/*.parquet
 data/**/*.zip
 data/**/*.xlsx
 data/**/*.pdf
+data/sisver/*
 
-## Notebooks
+### Notebooks
 notebooks/**/*.ipynb
 
-## Models
-models/*
 
-## Resulting Artifacts
-artifacts/*
+## Mortality Prediction Project
+### Data
+mort_pred/data/**/*.csv
+mort_pred/data/**/*.parquet
+mort_pred/data/**/*.zip
+mort_pred/data/**/*.xlsx
+mort_pred/data/**/*.pdf
 
-## MLflow Stuff
-mlruns/*
-mlruns/
+### Notebooks
+mort_pred/notebooks/**/*.ipynb
+
+### Models
+mort_pred/models/*.pkl
+mort_pred/models/*.h5
+mort_pred/models/
+
+### Artifacts
+mort_pred/artifacts/*.csv
+mort_pred/artifacts/*.parquet
+mort_pred/artifacts/*.pkl
+mort_pred/artifacts/*.jpg
+mort_pred/artifacts/*.png
 
 
+# GLOBAL STUFF
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
