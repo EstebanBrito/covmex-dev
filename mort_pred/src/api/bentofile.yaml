@@ -1,0 +1,13 @@
+service: "service:bentoservice"
+labels:
+  owner: covmexai-team
+  stage: dev
+include:
+- "service.py"
+python:
+  packages:
+  - numpy
+  - pandas
+  - scikit-learn
+  - tensorflow-cpu
+  - pydantic

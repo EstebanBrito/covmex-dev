@@ -15,6 +15,7 @@ graphviz = "*"
 pydot = "*"
 tensorflow-cpu = "*"
 bentoml = "*"
+pydantic = "*"
 
 [dev-packages]
 
