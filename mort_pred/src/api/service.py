@@ -8,33 +8,39 @@ from pydantic import BaseModel
 model_runner = bml.keras.get('bentomodel:latest').to_runner()
 preproc_pipeline_runner = bml.sklearn.get('preproc_pipeline:latest').to_runner()
 
-
 # Service
 bentoservice = bml.Service('mort-pred', runners=[model_runner, preproc_pipeline_runner])
 
+# Input validation models
+# Default values in Pacient Model are shown as examples in the 
+# web API documentation, but automatically fill inputs that were not
+# defined in client's request.
+# TODO: Add automatic documentation of examples, whilst enforcing
+# a policy that asks the client for every field on information
 class PacientModel(BaseModel):
-    SEXO: int = 1
-    EDAD: int = 16
-    EMBARAZO: int = 0
-    DIABETES: int = 0
-    EPOC: int = 0
-    ASMA: int = 0
-    INMUSUPR: int = 0
-    HIPERTENSION: int = 0
-    CARDIOVASCULAR: int = 0
-    OBESIDAD: int = 0
-    RENAL_CRONICA: int = 0
-    TABAQUISMO: int = 0
-    OTRA_COM: int = 0
-    DIAS_SINTOMAS: int = 4
+    SEXO: int
+    EDAD: int
+    EMBARAZO: int
+    DIABETES: int
+    EPOC: int
+    ASMA: int
+    INMUSUPR: int
+    HIPERTENSION: int
+    CARDIOVASCULAR: int
+    OBESIDAD: int
+    RENAL_CRONICA: int
+    TABAQUISMO: int
+    OTRA_COM: int
+    DIAS_SINTOMAS: int
 
 # Endpoints
-@bentoservice.api(input=JSON(pydantic_model=PacientModel), output=NumpyNdarray())
+@bentoservice.api(input=JSON(pydantic_model=PacientModel), output=NumpyNdarray(shape=[1, 1], dtype=np.float64))
 def predict(data: PacientModel) -> np.array:
+    # Preprocess input data
     df = pd.DataFrame(data.dict(), index=[0])
-    # print(dir(preproc_pipeline_runner))
-    # print(dir(model_runner))
-    # Preprocess data
     preproc_data = preproc_pipeline_runner.transform.run(df)
-    result = model_runner.predict.run(preproc_data) # TODO: Add args from orig function (e.g. verbose=0)
-    return result
+    # Make predictions
+    predictions = model_runner.predict.run(preproc_data) # TODO: Add args from orig function (e.g. verbose=0)
+    # Preprocess predictions
+    predictions = predictions # TODO: Convert to json
+    return predictions
